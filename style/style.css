@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f2c84b, #d58936); /* Cor de dia */
+    color: #4a2700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    transition: background 0.5s, color 0.5s; /* Suaviza a transição de cores */
+}
+
+h1 {
+    font-size: 3rem;
+    color: #4a2700; /* Cor do título no dia */
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.6);
+    margin-bottom: 20px;
+    transition: color 0.5s; /* Suaviza a transição da cor do título */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    background: #fdf1e2;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    transition: background 0.5s; /* Transição suave da cor do fundo */
+}
+
+.character {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.character img {
+    width: 180px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.speech-bubble {
+    position: relative;
+    background: #fff3c4; /* Cor do fundo de dia */
+    border: 2px solid #ffcb42;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4a2700; /* Cor do texto de dia */
+    max-width: 350px;
+    margin-left: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background 0.5s, color 0.5s; /* Transição suave para as cores da bolha de fala */
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right: 20px solid #fff3c4;
+    transform: translateY(-50%);
+}
+
+.time {
+    font-size: 4rem;
+    color: #d76d00;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .speech-bubble {
+        margin-left: 0;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+}
