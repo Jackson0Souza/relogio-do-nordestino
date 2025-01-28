@@ -18,7 +18,7 @@ h1 {
     color: #4a2700; /* Cor do título no dia */
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.6);
-    margin-top: 0px; /* Ajusta a margem superior */
+    margin-top: 0; /* Remove a margem superior para o título ficar colado no topo */
     margin-bottom: 20px;
     transition: color 0.5s; /* Suaviza a transição da cor do título */
     text-align: center; /* Garante que o título permaneça centralizado */
