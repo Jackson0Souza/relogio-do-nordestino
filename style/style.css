@@ -9,6 +9,8 @@ body {
     height: 100vh;
     flex-direction: column;
     transition: background 0.5s, color 0.5s; /* Suaviza a transição de cores */
+    overflow: hidden; /* Impede o overflow de conteúdo */
+    padding: 0 15px; /* Adiciona um pequeno espaço nas laterais para evitar que o conteúdo grude */
 }
 
 h1 {
@@ -18,16 +20,20 @@ h1 {
     text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.6);
     margin-bottom: 20px;
     transition: color 0.5s; /* Suaviza a transição da cor do título */
+    text-align: center; /* Garante que o título permaneça centralizado */
+    
 }
 
 .container {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: #fdf1e2;
     padding: 30px;
     border-radius: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    max-width: 800px;
+    max-width: 800px; /* Limita a largura máxima do container */
+    width: 90%; /* Faz o container ocupar 100% da largura disponível */
     transition: background 0.5s; /* Transição suave da cor do fundo */
 }
 
@@ -78,15 +84,77 @@ h1 {
     text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.6);
 }
 
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .character img {
+        width: 150px; /* Ajusta o tamanho da imagem do personagem */
+    }
+
+    .speech-bubble {
+        font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+        max-width: 80%;
+    }
+
+    .time {
+        font-size: 3rem; /* Ajusta o tamanho da fonte do relógio */
+    }
+}
+
 @media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
     .container {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
+    }
+
+    .character img {
+        width: 120px; /* Reduz o tamanho da imagem em dispositivos menores */
     }
 
     .speech-bubble {
         margin-left: 0;
         margin-top: 20px;
         max-width: 100%;
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+    }
+
+    .time {
+        font-size: 2.5rem; /* Reduz o tamanho do relógio */
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 20px; /* Garante que o conteúdo não fique colado nas laterais */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reduz o tamanho do título */
+        margin-bottom: 15px; /* Ajusta a margem para títulos menores */
+    }
+
+    .container {
+        padding: 15px;
+        width: 100%; /* Garante que o container ocupe toda a largura disponível */
+        box-sizing: border-box; /* Garante que o padding não ultrapasse o limite da largura */
+    }
+
+    .character img {
+        width: 120px; /* Ajusta a imagem para telas pequenas */
+    }
+
+    .speech-bubble {
+        font-size: 1rem; /* Ajusta o tamanho da fonte para telas pequenas */
+    }
+
+    .time {
+        font-size: 2.5rem; /* Ajusta o tamanho do relógio para telas pequenas */
     }
 }
