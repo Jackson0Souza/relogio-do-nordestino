@@ -21,10 +21,10 @@ function updateClock() {
     message = "Opaa! Já mandou aquele cuscuz com café de rapadura?";
     body.style.background = "linear-gradient(135deg, #f2c84b, #d58936)";
     body.style.color = "#4a2700";
-    container.style.background = "#fdf1e2"; 
-    speechBubble.style.background = "#fff3c4"; 
-    speechBubble.style.color = "#4a2700"; 
-    title.style.color = "#4a2700"; 
+    container.style.background = "#fdf1e2";
+    speechBubble.style.background = "#fff3c4";
+    speechBubble.style.color = "#4a2700";
+    title.style.color = "#4a2700";
     characterImage.src = "assets/img/nordestino-dia.webp";
   } else if (hours >= 11 && hours < 14) {
     message = "E aí sô, já pegou aquele almoço arretado?";
@@ -35,22 +35,32 @@ function updateClock() {
     body.style.background = "linear-gradient(135deg, #3b4d61, #2c3e50)";
     body.style.color = "#fff";
     container.style.background = "#2c3e50";
-    speechBubble.style.background = "#34495e"; 
-    speechBubble.style.color = "#fff"; 
-    title.style.color = "#fff"; 
+    speechBubble.style.background = "#34495e";
+    speechBubble.style.color = "#fff";
+    title.style.color = "#fff";
     characterImage.src = "assets/img/nordestino-noite.webp";
   } else {
-    message = "Já tá tarde, sô! Simbora dormir. ";
+    message = "Já tá tarde, sô! Simbora dormir.";
     body.style.background = "linear-gradient(135deg, #2c3e50, #1a242f)";
     body.style.color = "#fff";
     container.style.background = "#34495e";
-    speechBubble.style.background = "#2c3e50"; 
+    speechBubble.style.background = "#2c3e50";
     speechBubble.style.color = "#fff";
     title.style.color = "#fff";
-    characterImage.src = "assets/img/nordestino-noite.webp"; 
+    characterImage.src = "assets/img/nordestino-noite.webp";
   }
 
-  messageElement.textContent = message;
+  // Animação suave para a mudança de imagem e mensagem
+  messageElement.classList.add("fade-out");
+  setTimeout(() => {
+    messageElement.textContent = message;
+    messageElement.classList.remove("fade-out");
+  }, 500);
+
+  characterImage.classList.add("fade-out");
+  setTimeout(() => {
+    characterImage.classList.remove("fade-out");
+  }, 500);
 }
 
 setInterval(updateClock, 1000);
