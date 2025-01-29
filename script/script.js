@@ -18,39 +18,36 @@ function updateClock() {
   let isDay = true;
 
   if (hours >= 6 && hours < 11) {
-    message = "Opaa! Já mandou aquele cuscuz?";
-    // Durante o dia
+    message = "Opaa! Já mandou aquele cuscuz com café de rapadura?";
     body.style.background = "linear-gradient(135deg, #f2c84b, #d58936)";
     body.style.color = "#4a2700";
-    container.style.background = "#fdf1e2"; // Fundo da div
-    speechBubble.style.background = "#fff3c4"; // Fundo da bolha de fala
-    speechBubble.style.color = "#4a2700"; // Cor da fonte da bolha
-    title.style.color = "#4a2700"; // Cor do título de dia
-    characterImage.src = "assets/img/nordestino-dia.webp"; // Imagem do nordestino de dia
+    container.style.background = "#fdf1e2"; 
+    speechBubble.style.background = "#fff3c4"; 
+    speechBubble.style.color = "#4a2700"; 
+    title.style.color = "#4a2700"; 
+    characterImage.src = "assets/img/nordestino-dia.webp";
   } else if (hours >= 11 && hours < 14) {
     message = "E aí sô, já pegou aquele almoço arretado?";
   } else if (hours >= 14 && hours < 18) {
     message = "Que tal um cafezinho pra espantar o sono?";
   } else if (hours >= 18 && hours < 22) {
     message = "Tá na hora de um arroz com feijão pra ir descançar o corpo.";
-    // Mudança para a noite
     body.style.background = "linear-gradient(135deg, #3b4d61, #2c3e50)";
     body.style.color = "#fff";
-    container.style.background = "#2c3e50"; // Fundo da div
-    speechBubble.style.background = "#34495e"; // Fundo da bolha de fala na noite
-    speechBubble.style.color = "#fff"; // Cor da fonte na noite
-    title.style.color = "#fff"; // Cor do título à noite
-    characterImage.src = "assets/img/nordestino-noite.webp"; // Imagem do nordestino à noite
+    container.style.background = "#2c3e50";
+    speechBubble.style.background = "#34495e"; 
+    speechBubble.style.color = "#fff"; 
+    title.style.color = "#fff"; 
+    characterImage.src = "assets/img/nordestino-noite.webp";
   } else {
     message = "Já tá tarde, sô! Simbora dormir. ";
-    // Noite avançada
     body.style.background = "linear-gradient(135deg, #2c3e50, #1a242f)";
     body.style.color = "#fff";
-    container.style.background = "#34495e"; // Fundo da div
-    speechBubble.style.background = "#2c3e50"; // Fundo da bolha de fala
-    speechBubble.style.color = "#fff"; // Cor da fonte na noite avançada
-    title.style.color = "#fff"; // Cor do título à noite avançada
-    characterImage.src = "assets/img/nordestino-noite.webp"; // Imagem do nordestino à noite
+    container.style.background = "#34495e";
+    speechBubble.style.background = "#2c3e50"; 
+    speechBubble.style.color = "#fff";
+    title.style.color = "#fff";
+    characterImage.src = "assets/img/nordestino-noite.webp"; 
   }
 
   messageElement.textContent = message;
